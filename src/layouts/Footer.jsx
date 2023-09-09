@@ -5,8 +5,11 @@ const Footer = () =>{
     const list = ["SHOP","INGRESAR","CONTACTO"];
     return(
         <footer>
+            <div>
             <ListNavbar list={list}/>
             <img src={logo} alt="Logo FunkoPop" />
+            </div>
+            <p>All rights reserved 2023 - Funkoshop &copy;</p>
         </footer>
     )
 }

@@ -11,7 +11,7 @@ const CardSection = () =>{
     return(
         <section>
             {
-                cards.map(item => <Card key={item.id} {...item} button={true}/>)
+                cards.map(item => <Card key={item.id} {...item}/>)
             }
         </section>
     )

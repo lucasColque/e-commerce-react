@@ -5,6 +5,7 @@ import Home from "./pages/Home"
 import Register from './pages/Register';
 import Login from './pages/Login';
 import DetailCharacter from './pages/DetailCharacter';
+import PasswordRecoveryPage from './pages/PasswordRecoveryPage';
 function App() {
     return (
         <>
@@ -16,7 +17,9 @@ function App() {
                     <Route path="/login" element={<Login />} />
                     <Route path="/ingresar" element={<Login />} />
                     <Route path="/detailCharacter/:id" element={<DetailCharacter />} />
+                    <Route path="/recuperarCuenta" element={<PasswordRecoveryPage />} />
 
+                    
 
 
 

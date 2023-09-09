@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Card = ({url, subTitle, title, price, textPrice,id, button}) =>{
+const Card = ({url, subTitle, title, price, textPrice,id}) =>{
     return(
         <div>
             
@@ -16,7 +16,7 @@ const Card = ({url, subTitle, title, price, textPrice,id, button}) =>{
                 <p>{textPrice}</p>
             </div>
             <Link to={`/detailCharacter/${id}`}>
-                {button? <button>VER MAS</button>: ''}
+                <button>VER MAS</button>
             </Link>
         </div>
     )
