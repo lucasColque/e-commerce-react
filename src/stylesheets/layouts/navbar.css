@@ -48,7 +48,8 @@
 /** HEADER */
 header{
     background-color: var(--dark-bg-solid);
-    padding: var(--spacing-20)
+    padding: var(--spacing-20);
+
 }
 .navbar{
     display: flex;

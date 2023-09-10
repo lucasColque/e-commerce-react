@@ -1,18 +1,23 @@
 import React from "react";
 import Button from "./Button";
+import "../stylesheets/components/banner.css"
 
-
-const Banner = () =>{
-    const btn={
-        url:"/catalogo",
-        texto:"SHOP"
+const Banner = () => {
+    const btn = {
+        url: "/catalogo",
+        texto: "SHOP"
     }
-    return(
-/*Como fondo del div, la imagen del banner */
-        <section>
-            <h2>Nuevos ingresos</h2>
-            <p> Descubrí el próximo Funko Pop de tu colección</p>
-            <Button {...btn}/>
+    const styles={
+        hero__link:"hero__link"
+    }
+    return (
+        /*Como fondo del div, la imagen del banner */
+        <section className="hero">
+            <article className="hero__content container">
+                <h3 className="hero__title">Nuevos ingresos</h3>
+                <p className="hero__text"> Descubrí el próximo Funko Pop de tu colección</p>
+                <Button  {...btn} {...styles} />
+            </article>
         </section>
     )
 }

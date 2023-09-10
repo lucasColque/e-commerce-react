@@ -1,14 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Button = ({url,texto}) =>{
+const Button = ({url,texto, hero__link}) =>{
     return(
         <>
-            <button>
-                <Link to={url}>
+                <Link className={hero__link} to={url}>
                     {texto}
                 </Link>
-            </button>
         </>
     )
 }
