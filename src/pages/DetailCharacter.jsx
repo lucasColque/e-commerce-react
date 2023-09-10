@@ -10,7 +10,7 @@ const DetailCharacter = () =>{
     const id = useParams();
 
     return(
-        <div className="container">
+        <div>
         <Navbar />
         
         {cards.map(card => (card.id == id.id?  <DetailCard key={card.id} {...card}/>:'') )}

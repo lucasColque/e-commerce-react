@@ -1,4 +1,4 @@
-* {
+*{
     outline: 1px solid black;
 }
 
@@ -56,7 +56,6 @@
 *::before,
 *::after {
     box-sizing: border-box;
-    outline: 1px solid black;
     margin: 0;
     padding: 0;
 }

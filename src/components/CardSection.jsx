@@ -6,14 +6,17 @@ import cards from "../helper/funkopop"
 
 
 
-const CardSection = () =>{
+const CardSection = () => {
 
-    return(
-        <section>
-            {
-                cards.map(item => <Card key={item.id} {...item}/>)
-            }
-        </section>
+    return (
+        <>
+            <aside></aside>
+            <section className="card-items">
+                {
+                    cards.map(item => <Card key={item.id} {...item} />)
+                }
+            </section>
+        </>
     )
 }
 export default CardSection

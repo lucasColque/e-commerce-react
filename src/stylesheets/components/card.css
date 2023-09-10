@@ -46,47 +46,68 @@
     --spacing-8: 0.8rem;
 }
 
-/**MAIN*/
-.collection{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
-    padding: var(--spacing-16) 0;
-}
-.collection:nth-child(even) .collection__cover{
-    order: -1;
-}
-.collection__content{
+/**CARD*/
+
+.card-item__content{
     display: flex;
     flex-direction: column;
-    align-items: start;
-    gap: var(--spacing-24);
+    gap: var(--spacing-12);
+    padding: var(--spacing-16);
 }
-.collection__title{
-    font-family: var(--alternative-font);
-    font-size: var(--font-display);
+.card-item__licence{
+    font-size: var(--font-xsmall);
     font-weight: 500;
-}
-.collection__text{
     color: var(--dark-500);
-    font-family: var(--alternative-font);
-    font-size: var(--font-large);
-    font-weight: 300;
-    padding-bottom: var(--spacing-20);
-    border-bottom: 2px solid var(--primary-solid);
 }
-.collection__link{
-    display: inline-block;
+.card-item__name{
     font-size: var(--font-medium);
-    background-color: var(--dark-bg-solid);
+    font-weight: 700;
+}
+.card-item__price{
+    font-size: var(--font-small);
+    color: var(--dark-900);
+}
+.card-item__promo{
+    font-size: var(--font-xsmall);
+    color: var(--secondary-solid);
+    font-weight: 700;
+}
+.card-item__cover{
+/*!Con display flex el tamaño de la caja queda fijo*/
+    display: flex;
+    transition: transform .4s ease-in-out;
+    position: relative;
+}
+.card-item__cover img{
+    animation: fade 1.3s;
+}
+.card-item__cover:hover{
+    transform: scale(1.05);
+}
+.card-item__img--back{
+    display: none;
+}
+.card-item__cover:hover .card-item__img--back{
+    display: block;
+}
+.card-item__cover:hover .card-item__img--front{
+    display: none;
+}
+.card-item__tag{
+    font-size: var(--font-xsmall);
+    text-transform: uppercase;
+    background-color: var(--primary-solid);
     color: var(--light-font-solid);
-    padding: var(--spacing-16) var(--spacing-36) ;
-    border-radius: 50px;
-    font-weight: 500;
-    transition: background .3s ease-in-out;
+    padding: var(--spacing-8) var(--spacing-12);
+    position: absolute;
+    right: 0;
 }
-.collection__link:hover{
-    background-color: var(--primary-900);
-
+/**-CARD-*/
+@keyframes fade {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
-/**-MAIN-*/
