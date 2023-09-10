@@ -3,6 +3,8 @@ import imageSection1 from "../assets/images/multimedia/star-wars/baby-yoda-1.web
 import imageSection2 from "../assets/images/multimedia/pokemon/vulpix-1.webp"
 import imageSection3 from "../assets/images/multimedia/harry-potter/snape-patronus-1.webp"
 import CardMain from "./CardMain";
+import "../stylesheets/components/main.css";
+
 
 const Main = () =>{
     const cards=[
@@ -10,11 +12,18 @@ const Main = () =>{
         {image:imageSection2, textTitle:"POKEMON INDIGO", textParagraph:"Atrapa todos los que puedas y disfruta de una colección llena de amigos."},
         {image:imageSection3, textTitle: "HARRY POTTER", textParagraph: "Revive los recuerdos de una saga llena de magia y encanto."}
     ]
+    const styles={
+        collection:"collection container",
+        collection__content:"collection__content",
+        collection__title:"collection__title",
+        collection__text:"collection__text",
+        collection__link:"collection__link",
+        collection__cover:"collection__cover"        
+    }
     return(
-        <main>
-            
+        <main className="main-container">
             {
-                cards.map(card => <CardMain key={card.textTitle.toLowerCase()} {...card}/>)
+                cards.map(card => <CardMain {...styles} key={card.textTitle.toLowerCase()} {...card}/>)
             }
         </main>
     )

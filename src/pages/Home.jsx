@@ -9,9 +9,7 @@ function Home() {
     <>
       <Navbar />
       <Banner />
-      <div className="container bg-solid-light">
-        <Main />
-      </div>
+      <Main />
       <Footer />
     </>
   );
