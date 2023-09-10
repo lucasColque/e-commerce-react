@@ -1,15 +1,24 @@
 import React from "react";
-import ListNavbar from "../components/ListNavbar"
-import logo from "../assets/images/multimedia/branding/isotype.svg"
-const Footer = () =>{
-    const list = ["SHOP","INGRESAR","CONTACTO"];
-    return(
-        <footer>
-            <div>
-            <ListNavbar list={list}/>
-            <img src={logo} alt="Logo FunkoPop" />
-            </div>
-            <p>All rights reserved 2023 - Funkoshop &copy;</p>
+import ListNavbar from "../components/ListNavbar";
+import logo from "../assets/images/multimedia/branding/isotype.svg";
+import "../stylesheets/layouts/footer.css"
+const Footer = () => {
+    const styles={
+        navbar__menu:"navbar__item",
+        navbar__item:"navbar__item",
+        navbar__link:"navbar__link"
+    }
+    const list = ["SHOP", "INGRESAR", "CONTACTO"];
+    return (
+        <footer className="footer">
+            <nav className="navbar container">
+                <ListNavbar list={list} {...styles}/>
+
+                <picture>
+                    <img src={logo} alt="Logo FunkoPop" />
+                </picture>
+            </nav>
+            <p className="footer__copy">All rights reserved 2023 - Funkoshop &copy;</p>
         </footer>
     )
 }
