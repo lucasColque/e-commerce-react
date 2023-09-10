@@ -1,4 +1,4 @@
-import Banner from "../components/Banner";
+
 import Main from "../components/Main";
 import Footer from "../layouts/Footer";
 import Navbar from "../layouts/Navbar";
@@ -6,13 +6,13 @@ import Navbar from "../layouts/Navbar";
 
 function Home() {
   return (
-    <div className="container">
+    <>
       <Navbar />
-      <Banner/>
-      <Main/>
+      <div className="container bg-solid-light">
+        <Main />
+      </div>
       <Footer />
-    </div>
-    
+    </>
   );
 }
 

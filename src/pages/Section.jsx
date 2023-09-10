@@ -4,13 +4,17 @@ import Footer from "../layouts/Footer";
 import CardSection from "../components/CardSection";
 
 
-const Section = () =>{
-    return(
-        <div className="container">
+const Section = () => {
+    return (
+        <>
         <Navbar />
+        <div className="container">
+            
             <CardSection />
-        <Footer />
+            
         </div>
+            <Footer />
+        </>
     )
 }
 export default Section

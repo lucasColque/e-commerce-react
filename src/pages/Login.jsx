@@ -21,31 +21,34 @@ const Login = () => {
     }
 
     return (
-        <div className="container">
+        <>
             <Navbar />
-            <section>
-                <h1>INGRESAR A MI CUENTA</h1>
-                <p>Completa el formulario para ser parte del mundo de los Funkos</p>
-                <form action="" onSubmit={handleSubmit}>   
-                    <div>
-                        <label htmlFor="email">Email: </label>
-                        <input type="email" name="email" id="email" value={value.email} placeholder=" jotaroStar@correo.com" onChange={handleOnChange} />
-                    </div>
-                    <div>
-                        <label htmlFor="password">Contraseña: </label>
-                        <input type="password" name="password" id="password" value={value.password} placeholder="  &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;" onChange={handleOnChange} />
-                    </div>
-                    <input type="submit" value="Registrar" />
-                    <div>
-                        <label htmlFor="remember">Recordarme</label>
-                        <input type="checkbox" name="remember" id="remember" />
-                    </div>
-                    <input type="submit" value="Ingresar" />
-                </form>
-                <Link to="/recuperarCuenta">Olvidé mi contraseña</Link>
-            </section>
+            <div className="container">
+
+                <section>
+                    <h1>INGRESAR A MI CUENTA</h1>
+                    <p>Completa el formulario para ser parte del mundo de los Funkos</p>
+                    <form action="" onSubmit={handleSubmit}>
+                        <div>
+                            <label htmlFor="email">Email: </label>
+                            <input type="email" name="email" id="email" value={value.email} placeholder=" jotaroStar@correo.com" onChange={handleOnChange} />
+                        </div>
+                        <div>
+                            <label htmlFor="password">Contraseña: </label>
+                            <input type="password" name="password" id="password" value={value.password} placeholder="  &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;" onChange={handleOnChange} />
+                        </div>
+                        <div>
+                            <label htmlFor="remember">Recordarme</label>
+                            <input type="checkbox" name="remember" id="remember" />
+                        </div>
+                        <input type="submit" value="Ingresar" />
+                    </form>
+                    <Link to="/recuperarCuenta">Olvidé mi contraseña</Link>
+                </section>
+
+            </div>
             <Footer />
-        </div>
+        </>
     )
 }
 export default Login

@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Card = ({url, subTitle, title, price, textPrice,id}) =>{
-    return(
-        <div>
-            
+const Card = ({ url, subTitle, title, price, textPrice, id }) => {
+    return (
+        <article>
             <div>
-                <img src={url} alt="Funko Pop" />
+                <picture>
+                    <img src={url} alt="Funko Pop" />
+                </picture>
                 <div>NUEVO</div>
             </div>
             <div>
@@ -18,7 +19,7 @@ const Card = ({url, subTitle, title, price, textPrice,id}) =>{
             <Link to={`/detailCharacter/${id}`}>
                 <button>VER MAS</button>
             </Link>
-        </div>
+        </article>
     )
 }
 export default Card
