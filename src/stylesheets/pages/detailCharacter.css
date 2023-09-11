@@ -134,6 +134,19 @@
 .detalles-card__cover:hover .detalles__img--front{
     display: none;
 }
+.detalles-card__stockNull{
+    font-size: var(--font-large);
+    font-weight: 400;
+    color: var(--primary-solid);
+}
+.detalles-card__stock{
+    font-size: var(--font-large);
+    font-weight: 400;
+}
+.detalles-card__stockLast{
+    font-size: var(--font-large);
+    font-weight: 400;
+}
 /**-DETAILCHARACTER-*/
 @keyframes fade {
     0%{

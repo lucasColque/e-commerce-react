@@ -1,15 +1,22 @@
 import React, { useEffect, useState } from "react";
 import "../stylesheets/pages/detailCharacter.css";
 
-const DetailCard = ({ url, url2, subTitle, title, price, description, code }) => {
+const DetailCard = ({ url, url2, subTitle, title, price, description, code, stock }) => {
+
     useEffect(() => {
-        // Llevar la página a la parte superior cuando se carga el componente
         window.scrollTo(0, 0);
     }, []);
+
     const [count, setCount] = useState(0);
+
     const handleClickIncrement = () => {
-        setCount(count + 1)
+        if(count == stock){
+            setCount(stock);
+        }else{
+            setCount(count + 1)
+        }
     }
+
     const handleClickDecrement = () => {
         if (count == 0) {
             setCount(0)
@@ -17,6 +24,7 @@ const DetailCard = ({ url, url2, subTitle, title, price, description, code }) =>
             setCount(count - 1)
         }
     }
+
     const handleConstructor = () =>{
         if(count === 0){
             alert(`No agregaste funko. \n Sitio en construcción.`)
@@ -36,6 +44,8 @@ const DetailCard = ({ url, url2, subTitle, title, price, description, code }) =>
                 <p className="detalles-card__description">{description}</p>
                 <p className="detalles-card__price">{price}</p>
                 <p className="detalles-card__code">Código: {code}</p>
+                {stock==0?<p className="detalles-card__stockNull">No hay Stock</p>:stock == 1?<p className="detalles-card__stockLast">Ultimo disponible!</p>:<p className="detalles-card__stock">Unidades: {stock}</p> }
+                
                 <div className="detalles-count">
                     <p className="detalles-count__unidad">{count}</p>
                     <div className="detalles-button">
