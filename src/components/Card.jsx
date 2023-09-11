@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../stylesheets/components/card.css";
+import "../../src/stylesheets/components/card.css";
+
 
 const Card = ({ url,url2, subTitle, title, price, textPrice, id }) => {
+
     return (
         <article className="card-item">
             <Link className="card-item__link" to={`/detailCharacter/${id}`}>

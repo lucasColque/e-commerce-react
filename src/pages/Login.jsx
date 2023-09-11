@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import Navbar from "../layouts/Navbar";
 import Footer from "../layouts/Footer"
 import { Link } from "react-router-dom";
-
+import "../stylesheets/pages/login.css";
+import Button from "../components/Button";
 
 const Login = () => {
     const form = {
         email: "",
-        password: ""
+        password: "",
+        functionHandle:"handleLogin"
     };
     const [value, setValue] = useState(form);
 
@@ -19,34 +21,38 @@ const Login = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
     }
-
+    const styles = {
+        hero__link: "detalles-count__compra",
+        texto: "Ingresar",
+        url: ''
+    };
+    const handleLogin = () =>{
+        alert("Te logueaste.");
+    }
     return (
         <>
             <Navbar />
-            <div className="container">
+            <section className="input container">
+                <h1 className="input__title">INGRESAR A MI CUENTA</h1>
+                <form className="input__form" action="" onSubmit={handleSubmit}>
+                    <div className="input__grid">
+                        <div className="input__flex">
+                            <label className="input__label" htmlFor="email">Email: </label>
+                            <label className="input__label" htmlFor="password">Contraseña: </label>
+                        </div>
+                        <div className="input__flex">
+                            <input className="input__input" type="email" name="email" id="email" value={value.email} placeholder=" jotaroStar@correo.com" onChange={handleOnChange} />
+                            <input className="input__input" type="password" name="password" id="password" value={value.password} placeholder="  &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;" onChange={handleOnChange} />
+                        </div>
+                    </div>
+                    <div className="input__register">
+                        <Button {...styles} functionHandle={handleLogin}/>
+                            <label className="input__terms" htmlFor="remember"><input className="input__inputTerm" type="checkbox" name="remember" id="remember" />Recordarme</label>    
+                    </div>
 
-                <section>
-                    <h1>INGRESAR A MI CUENTA</h1>
-                    <p>Completa el formulario para ser parte del mundo de los Funkos</p>
-                    <form action="" onSubmit={handleSubmit}>
-                        <div>
-                            <label htmlFor="email">Email: </label>
-                            <input type="email" name="email" id="email" value={value.email} placeholder=" jotaroStar@correo.com" onChange={handleOnChange} />
-                        </div>
-                        <div>
-                            <label htmlFor="password">Contraseña: </label>
-                            <input type="password" name="password" id="password" value={value.password} placeholder="  &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;" onChange={handleOnChange} />
-                        </div>
-                        <div>
-                            <label htmlFor="remember">Recordarme</label>
-                            <input type="checkbox" name="remember" id="remember" />
-                        </div>
-                        <input type="submit" value="Ingresar" />
-                    </form>
-                    <Link to="/recuperarCuenta">Olvidé mi contraseña</Link>
-                </section>
-
-            </div>
+                </form>
+                <Link className="input__remember" to="/recuperarCuenta">Olvidé mi contraseña</Link>
+            </section>
             <Footer />
         </>
     )

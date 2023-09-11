@@ -10,13 +10,13 @@ const DetailCharacter = () =>{
     const id = useParams();
 
     return(
-        <div>
+        <>
         <Navbar />
         
         {cards.map(card => (card.id == id.id?  <DetailCard key={card.id} {...card}/>:'') )}
         
         <Footer />
-        </div>
+        </>
     )
 }
 export default DetailCharacter

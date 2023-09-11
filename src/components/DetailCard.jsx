@@ -1,39 +1,52 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import "../stylesheets/pages/detailCharacter.css";
 
-
-const DetailCard = ({url, subTitle, title, price, description, code}) =>{
+const DetailCard = ({ url, url2, subTitle, title, price, description, code }) => {
+    useEffect(() => {
+        // Llevar la página a la parte superior cuando se carga el componente
+        window.scrollTo(0, 0);
+    }, []);
     const [count, setCount] = useState(0);
-    const handleClickIncrement = () =>{
+    const handleClickIncrement = () => {
         setCount(count + 1)
     }
-    const handleClickDecrement = () =>{
-        if(count == 0){
+    const handleClickDecrement = () => {
+        if (count == 0) {
             setCount(0)
-        }else{
-            setCount(count -1)
+        } else {
+            setCount(count - 1)
         }
     }
-    return(
-        <div>
-            
-            <div>
-                <img src={url} alt="Funko Pop" />
-            </div>
-            <div>
-                <h4>{subTitle}</h4>
-                <h3>{title}</h3>
-                <p>{description}</p>
-                <p>{price}</p>
-                <p>Código: {code}</p>
-            </div>
-            <div>
-                <p>{count}</p>
-                <button onClick={handleClickIncrement}>+</button>
-                <button onClick={handleClickDecrement}>-</button>
-                <p>Agregar al Carrito</p>
-            </div>
+    const handleConstructor = () =>{
+        if(count === 0){
+            alert(`No agregaste funko. \n Sitio en construcción.`)
+        }else{
+            alert(`Agregaste ${count} funkos. \n Sitio en construcción.`);
+        }
+    }
+    return (
+        <section className="detalles-card container">
+            <picture className="detalles-card__cover">
+                <img src={url} className="detalles__img--front" alt="Funko Pop" />
+                <img src={url2} className="detalles__img--back" alt="Funko Pop Box" />
+            </picture>
+            <article className="detalles-card__content">
+                <h4 className="detalles-card__subtitle">{subTitle}</h4>
+                <h3 className="detalles-card__title">{title}</h3>
+                <p className="detalles-card__description">{description}</p>
+                <p className="detalles-card__price">{price}</p>
+                <p className="detalles-card__code">Código: {code}</p>
+                <div className="detalles-count">
+                    <p className="detalles-count__unidad">{count}</p>
+                    <div className="detalles-button">
+                        <button className="detalles-button__button" onClick={handleClickIncrement}>+</button>
+                        <button className="detalles-button__button" onClick={handleClickDecrement}>-</button>
+                    </div>
+                    <button className="detalles-count__compra" onClick={handleConstructor}>Agregar al Carrito</button>
+                </div>
+            </article>
 
-        </div>
+        </section>
     )
 }
 export default DetailCard
