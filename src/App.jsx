@@ -6,6 +6,8 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 import DetailCharacter from './pages/DetailCharacter';
 import PasswordRecoveryPage from './pages/PasswordRecoveryPage';
+
+
 function App() {
     return (
         <>

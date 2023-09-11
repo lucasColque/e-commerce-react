@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../layouts/Navbar";
 import Footer from "../layouts/Footer"
 import { Link } from "react-router-dom";
@@ -6,6 +6,11 @@ import "../stylesheets/pages/login.css";
 import Button from "../components/Button";
 
 const Login = () => {
+
+    useEffect(() => {
+        // Llevar la página a la parte superior cuando se carga el componente
+        window.scrollTo(0, 0);
+    }, []);
     const form = {
         email: "",
         password: "",
