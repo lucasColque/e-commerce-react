@@ -99,6 +99,9 @@
     margin: 0 var(--spacing-16);
 }
 .form__error{
-    display: none;
+    font-size: var(--font-small);
+    color: var(--primary-solid);
+    display: block;
 }
+
 /**-REGISTER-*/

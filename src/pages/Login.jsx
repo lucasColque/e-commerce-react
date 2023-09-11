@@ -6,6 +6,8 @@ import "../stylesheets/pages/login.css";
 import Button from "../components/Button";
 
 const Login = () => {
+    const [register, setRegister] = useState(false);
+
 
     useEffect(() => {
         // Llevar la página a la parte superior cuando se carga el componente
@@ -32,7 +34,15 @@ const Login = () => {
         url: ''
     };
     const handleLogin = () =>{
-        alert("Te logueaste.");
+        let bandera = true;
+        setRegister(true);
+        for (const propiedad in value) {
+            if (value[propiedad] === "") {
+                bandera = false;
+                break;
+            }
+        }
+        if(bandera) alert(`Inicio sesion\n Sitio en construcción`)
     }
     return (
         <>
@@ -47,7 +57,9 @@ const Login = () => {
                         </div>
                         <div className="input__flex">
                             <input className="input__input" type="email" name="email" id="email" value={value.email} placeholder=" jotaroStar@correo.com" onChange={handleOnChange} />
+                            {value.email == "" && register?<span className="form__error" >Ingrese usuario</span>:''}
                             <input className="input__input" type="password" name="password" id="password" value={value.password} placeholder="  &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;" onChange={handleOnChange} />
+                            {value.password == "" && register?<span className="form__error" >Ingrese contraseña</span>:''}
                         </div>
                     </div>
                     <div className="input__register">

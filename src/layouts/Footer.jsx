@@ -13,7 +13,6 @@ const Footer = () => {
         <footer className="footer">
             <nav className="navbar container">
                 <ListNavbar list={list} {...styles}/>
-
                 <picture>
                     <img src={logo} alt="Logo FunkoPop" />
                 </picture>
