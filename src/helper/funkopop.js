@@ -8,6 +8,7 @@ import funko7 from "../assets/images/multimedia/star-wars/baby-yoda-1.webp";
 import funko8 from "../assets/images/multimedia/star-wars/luke-1.webp";
 import funko9 from "../assets/images/multimedia/star-wars/trooper-1.webp";
 
+
 import funko1Box from "../assets/images/multimedia/pokemon/charmander-box.webp";
 import funko2Box from "../assets/images/multimedia/pokemon/dragonite-box.webp";
 import funko3Box from "../assets/images/multimedia/pokemon/pikachu-box.webp";

@@ -3,7 +3,6 @@ import ListNavbar from "../components/ListNavbar";
 import logo from "../assets/images/multimedia/branding/logo.svg"
 import { Link } from "react-router-dom";
 import "../../src/stylesheets/layouts/navbar.css";
-
 const Navbar = () => {
 
     let sections = ["Home", "Catalogo","Registro","Login"];   

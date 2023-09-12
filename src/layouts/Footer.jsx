@@ -1,7 +1,7 @@
 import React from "react";
 import ListNavbar from "../components/ListNavbar";
 import logo from "../assets/images/multimedia/branding/isotype.svg";
-import "../../src/stylesheets/layouts/footer.css"
+import "../../src/stylesheets/layouts/footer.css";
 const Footer = () => {
     const styles={
         navbar__menu:"navbar__item",

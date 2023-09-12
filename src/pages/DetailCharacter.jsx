@@ -1,21 +1,17 @@
 import React from "react";
-import Navbar from "../layouts/Navbar";
-import Footer from "../layouts/Footer";
 import DetailCard from "../components/DetailCard";
 import { useParams } from "react-router-dom";
-import cards from "../helper/funkopop"
-
+import cards from "../helper/funkopop";
+import "../../src/stylesheets/pages/detailCharacter.css";
 
 const DetailCharacter = () =>{
     const id = useParams();
+    
 
     return(
         <>
-        <Navbar />
-        
         {cards.map(card => (card.id == id.id?  <DetailCard key={card.id} {...card}/>:'') )}
         
-        <Footer />
         </>
     )
 }

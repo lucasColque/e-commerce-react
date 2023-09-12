@@ -3,7 +3,7 @@ import Navbar from "../layouts/Navbar";
 import Footer from "../layouts/Footer";
 import CardSection from "../components/CardSection";
 import { useParams } from "react-router-dom";
-import "../stylesheets/pages/section.css";
+import "../../src/stylesheets/pages/section.css";
 
 const Section = () => {
     const name = useParams();
